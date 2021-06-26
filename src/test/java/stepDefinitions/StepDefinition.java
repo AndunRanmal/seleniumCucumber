@@ -203,5 +203,4 @@ public class StepDefinition extends BaseTest {
             System.out.println(coin);
         }
     }
-
 }
