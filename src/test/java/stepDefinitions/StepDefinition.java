@@ -6,25 +6,21 @@ import Models.CryptoCurrencyMapResponseData;
 import PageObjects.CoinMarketCapPage;
 import PageObjects.LoginPage;
 import Services.MarketCapApiService;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.util.JSONPObject;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import cucumber.api.junit.Cucumber;
-import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-import io.restassured.response.ValidatableResponse;
-import org.json.JSONArray;
 import org.json.JSONObject;
 import org.junit.runner.RunWith;
 
 import java.net.HttpURLConnection;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+import java.util.Objects;
 
-import static io.restassured.parsing.Parser.JSON;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -77,12 +73,13 @@ public class StepDefinition extends BaseTest {
         CoinMarketCapPage mp = new CoinMarketCapPage(driver);
         mp.clickOnShowRows();
         mp.selectShowRow(strArg1);
+        Thread.sleep(5000);
 
 
     }
 
     @Then("^Verify that \"([^\"]*)\" rows are displayed$")
-    public void verify_that_something_rows_are_displayed(String strArg1) throws Throwable {
+    public void verify_that_something_rows_are_displayed(int strArg1) throws Throwable {
         CoinMarketCapPage mp = new CoinMarketCapPage(driver);
         mp.verifyRowCount(strArg1);
     }
@@ -95,14 +92,14 @@ public class StepDefinition extends BaseTest {
         mp.enterMarketCapRange(min, max);
     }
 
-    @And("^ set Price \"([^\"]*)\" and \"([^\"]*)\"$")
+    @When("^set Price \"([^\"]*)\" and \"([^\"]*)\"$")
     public void set_price_something_and_something(String min, String max) throws Throwable {
         CoinMarketCapPage mp = new CoinMarketCapPage(driver);
         mp.enterPriceRange(min, max);
     }
 
     @Then("^Check records displayed on page are correct as per the filter applied$")
-    public void check_records_displayed_on_page_are_correct_as_per_the_filter_applied() throws Throwable {
+    public void check_records_displayed_on_page_are_correct_as_per_the_filter_applied() {
 
         System.out.println("verified records");
     }

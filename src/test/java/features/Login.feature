@@ -13,12 +13,12 @@ Feature: Login into an Application
 #      |test123@gmail.com	|12345      |
 
 
-#Scenario: Select and Verify 'Show rows' dropdown value to 100
-#  Given Initialize the browser with chrome
-#  And Navigate to "https://coinmarketcap.com" website
-#  When User Select 'Show rows' dropdown value to "50"
-#  Then Verify that "50" rows are displayed
-#  And close browsers
+Scenario: Select and Verify 'Show rows' dropdown value to 100
+  Given Initialize the browser with chrome
+  And Navigate to "https://coinmarketcap.com" website
+  When User Select 'Show rows' dropdown value to "100"
+  Then Verify that "100" rows are displayed
+  And close browsers
 
 
 Scenario: Filter and Verify records by MarketCap and Price
