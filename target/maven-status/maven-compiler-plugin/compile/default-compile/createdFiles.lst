@@ -1,0 +1,8 @@
+Models\CryptoCurrencyMapStatusResponseData.class
+PageObjects\DropDownPage.class
+Services\MarketCapApiService.class
+Models\CryptoCurrencyMapDataResponseData.class
+PageObjects\LoginPage.class
+Models\CryptoCurrencyMapResponseData.class
+General\BaseTest.class
+PageObjects\CoinMarketCapPage.class
