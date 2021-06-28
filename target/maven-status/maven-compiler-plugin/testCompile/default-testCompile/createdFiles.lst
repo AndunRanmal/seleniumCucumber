@@ -1,5 +1,0 @@
-TestCases\LoginTest.class
-cucumberOptions\TestRunner.class
-stepDefinitions\StepDefinition.class
-stepDefinitions\StepDefinitionApis.class
-TestCases\DropDownsTest.class
